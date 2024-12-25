@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--        This here is responsible for creating the object of Animal class  similar to @component (object managed by Spring itself)-->
+            <bean id="animal" class="org.Ritik.Animal"/>
+
+
+<!--        This here is responsible for creating the object of Dog class  similar to @component (object managed by Spring itself)-->
+            <bean id="Dog" class="org.Ritik.Dog">
+                <!-- This property define the value for age variable in Dog class  (Setter Injection)-->
+                <property name="age" value="15"></property>
+
+<!--            This is Constrcutor Injection . Here ref is the object (id of the target class) of which object we want to pass-->
+                <constructor-arg ref="animal"/>
+            </bean>
+
+
+</beans>
